@@ -47,4 +47,4 @@ The endpoint would be host:port/markethandler/fxprices/{instrumentId}. An exampl
 `
 This should return a json (with spring boot) but currently returns just a string (no http headers).
 
-#### Synchronization
+
