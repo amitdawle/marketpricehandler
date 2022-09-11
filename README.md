@@ -29,7 +29,8 @@ Spring boot is also not included (but can be added) to serve the rest endpoints.
 ```mermaid
   sequenceDiagram
     MarketPriceFeedHandler ->> CSVPriceTickParser: parse
-    MarketPriceFeedHandler ->> PriceTickProcessor: process
+    CSVPriceTickParser -->> MarketPriceFeedHandler : PriceTick
+    MarketPriceFeedHandler ->> PriceTickProcessor: process(PriceTick)
     PriceTickProcessor ->> PriceQuote :  create/update
 ```
 
