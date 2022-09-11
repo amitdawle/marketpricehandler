@@ -24,6 +24,24 @@ Spring boot is also not included (but can be added) to serve the rest endpoints.
 * Clients of the rest api are served by the PriceController which uses a PriceLookup to lookup to lookup and send the price.
 * If no price is found it sends an empty string (with REST it would send a 404)
 
+## Feed processing
+
+```mermaid
+  sequenceDiagram
+    MarketPriceFeedHandler ->> CSVPriceTickParser: parse
+    MarketPriceFeedHandler ->> PriceTickProcessor: process
+    PriceTickProcessor ->> PriceQuote :  create/update
+```
+
+## Instrument Lookup
+
+```mermaid
+  sequenceDiagram
+    Client ->> PriceController : rest call
+    PriceController ->> PriceLookup :  get
+    PriceLookup -->>  PriceController : PriceQuote
+    PriceController -->> Client : PriceQuote    
+```
 
 ### Building and Running the code
 I have built application using Idea 2022.1 CE edition, gradle 7.4.
