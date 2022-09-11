@@ -12,7 +12,7 @@ BUILD SUCCESSFUL in 2s
 # Design guide
 
 ### Architecture
-The microservice is designed on the principles of onion/clean architecture.
+The microservice is designed on the principles of [onion/clean architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/).
 The package structure reflects the application layout. A simple hashmap in PriceCache maintains the latest price.
 
 The service does not use spring for di but can be easily retrofitted to do so.
