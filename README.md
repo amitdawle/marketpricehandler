@@ -1,3 +1,14 @@
+# Building
+
+```
+% git clone https://github.com/amitdawle/marketpricehandler.git
+% cd marketpricehandler 
+% ./gradlew clean build
+.....
+BUILD SUCCESSFUL in 2s
+5 actionable tasks: 4 executed, 1 up-to-date
+```
+
 # Design guide
 
 ### Architecture
