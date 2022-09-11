@@ -40,8 +40,8 @@ Spring boot is also not included (but can be added) to serve the rest endpoints.
   sequenceDiagram
     Client ->> PriceController : rest call
     PriceController ->> PriceLookup :  get
-    PriceLookup -->>  PriceController : PriceQuote
-    PriceController -->> Client : PriceQuote    
+    PriceLookup -->>  PriceController : Price
+    PriceController -->> Client : Price
 ```
 
 ### Building and Running the code
