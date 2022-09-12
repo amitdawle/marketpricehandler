@@ -1,4 +1,4 @@
-package org.santander.marketpricehandler.core.api;
+package org.santander.marketpricehandler.core;
 
 import org.junit.jupiter.api.Test;
 import org.santander.marketpricehandler.core.applicationservice.PriceCache;
