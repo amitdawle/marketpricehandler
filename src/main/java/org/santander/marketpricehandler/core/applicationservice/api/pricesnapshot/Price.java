@@ -1,4 +1,4 @@
-package org.santander.marketpricehandler.core.api.pricesnapshot;
+package org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot;
 
 public class Price {
     private final String ccyPair;

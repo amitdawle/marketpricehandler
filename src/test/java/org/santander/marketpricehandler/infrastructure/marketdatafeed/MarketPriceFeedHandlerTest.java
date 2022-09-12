@@ -4,10 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.santander.marketpricehandler.core.api.feedprocessor.PriceTick;
-import org.santander.marketpricehandler.core.api.feedprocessor.PriceTickProcessor;
+import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTick;
+import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTickProcessor;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 

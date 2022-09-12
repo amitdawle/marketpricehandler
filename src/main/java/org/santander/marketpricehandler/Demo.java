@@ -1,7 +1,7 @@
 package org.santander.marketpricehandler;
 
-import org.santander.marketpricehandler.core.api.PriceCache;
-import org.santander.marketpricehandler.core.api.feedprocessor.PriceTickProcessor;
+import org.santander.marketpricehandler.core.applicationservice.PriceCache;
+import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTickProcessor;
 import org.santander.marketpricehandler.infrastructure.marketdatafeed.MarketPriceFeedHandler;
 import org.santander.marketpricehandler.infrastructure.marketdatafeed.csv.CSVPriceTickParser;
 import org.santander.marketpricehandler.infrastructure.rest.PriceController;

@@ -1,4 +1,4 @@
-package org.santander.marketpricehandler.core.api.feedprocessor;
+package org.santander.marketpricehandler.core.applicationservice.api.feedprocessor;
 
 public class PriceTick {
     private final int id;

@@ -1,7 +1,7 @@
 package org.santander.marketpricehandler.infrastructure.marketdatafeed.csv;
 
 import org.junit.jupiter.api.Test;
-import org.santander.marketpricehandler.core.api.feedprocessor.PriceTick;
+import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTick;
 import org.santander.marketpricehandler.infrastructure.marketdatafeed.PriceTickParseException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

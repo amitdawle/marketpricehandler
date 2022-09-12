@@ -1,7 +1,7 @@
 package org.santander.marketpricehandler.infrastructure.marketdatafeed;
 
-import org.santander.marketpricehandler.core.api.feedprocessor.PriceTick;
-import org.santander.marketpricehandler.core.api.feedprocessor.PriceTickProcessor;
+import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTick;
+import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTickProcessor;
 
 import java.util.Objects;
 

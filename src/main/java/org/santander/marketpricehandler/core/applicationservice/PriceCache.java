@@ -1,9 +1,9 @@
-package org.santander.marketpricehandler.core.api;
+package org.santander.marketpricehandler.core.applicationservice;
 
-import org.santander.marketpricehandler.core.api.feedprocessor.PriceTick;
-import org.santander.marketpricehandler.core.api.feedprocessor.PriceTickProcessor;
-import org.santander.marketpricehandler.core.api.pricesnapshot.Price;
-import org.santander.marketpricehandler.core.api.pricesnapshot.PriceLookup;
+import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTick;
+import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTickProcessor;
+import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.Price;
+import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.PriceLookup;
 import org.santander.marketpricehandler.core.domain.model.PriceQuote;
 
 import java.util.HashMap;

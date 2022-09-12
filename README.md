@@ -50,7 +50,7 @@ There are tests for the api and the individual components. The org.santander.mar
 class shows a (mock) setup on how the service will run 
 
 ### Assumptions / Limitations
-* The code has no synchronization. With multiple thread are reading writing simultaneously, there is a possibility of data race/visibility issues. For that the map in the org.santander.marketpricehandler.core.api.PriceCache can be changed to
+* The code has no synchronization. With multiple thread are reading writing simultaneously, there is a possibility of data race/visibility issues. For that the map in the PriceCache can be changed to
 a concurrent map or (my preferred approach) is to have a shim/indirection layer that handles thread pinning/actor
 or any other synchronization.
 

@@ -1,7 +1,7 @@
 package org.santander.marketpricehandler.infrastructure.rest;
 
-import org.santander.marketpricehandler.core.api.pricesnapshot.Price;
-import org.santander.marketpricehandler.core.api.pricesnapshot.PriceLookup;
+import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.Price;
+import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.PriceLookup;
 
 import java.util.Objects;
 import java.util.Optional;

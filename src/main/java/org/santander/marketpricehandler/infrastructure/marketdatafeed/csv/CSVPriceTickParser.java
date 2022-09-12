@@ -1,6 +1,6 @@
 package org.santander.marketpricehandler.infrastructure.marketdatafeed.csv;
 
-import org.santander.marketpricehandler.core.api.feedprocessor.PriceTick;
+import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTick;
 import org.santander.marketpricehandler.infrastructure.marketdatafeed.PriceTickParseException;
 import org.santander.marketpricehandler.infrastructure.marketdatafeed.PriceTickParser;
 

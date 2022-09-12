@@ -1,4 +1,4 @@
-package org.santander.marketpricehandler.core.api.pricesnapshot;
+package org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot;
 
 import java.util.Optional;
 
