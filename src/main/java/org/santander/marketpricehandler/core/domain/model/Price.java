@@ -3,7 +3,7 @@ package org.santander.marketpricehandler.core.domain.model;
 /*
 Handle the price quote and applies appropriate bid/ask commission
  */
-public class PriceQuote {
+public class Price {
     public static final double BID_COMMISSION_PERCENTAGE = (0.1 / 100);
     public static final double ASK_COMMISSION_PERCENTAGE = (0.1 / 100);
     private final String ccyPair;
@@ -13,9 +13,9 @@ public class PriceQuote {
     private String timeStamp;
 
 
-    public PriceQuote(final String ccyPair, final long priceId, final double bid, final double ask, String timeStamp) {
+    public Price(final String ccyPair, final long priceId, final double bid, final double ask, String timeStamp) {
         this.ccyPair = ccyPair;
-        this.updatePrice(priceId, bid, ask, timeStamp);
+        this.applyBidAsk(priceId, bid, ask, timeStamp);
     }
 
     public String getCcyPair() {
@@ -38,13 +38,12 @@ public class PriceQuote {
         return timeStamp;
     }
 
-    public PriceQuote updatePrice(final long priceId, final double bid, final double ask, String timeStamp) {
+    private void applyBidAsk(final long priceId, final double bid, final double ask, String timeStamp) {
         // Any specific check e.g. priceId > (current) this.priceId to ensure we are processing only the latest?
        this.priceId = priceId;
        this.bid = applyBidCommission(bid);
        this.ask = applyAskCommission(ask);
        this.timeStamp =  timeStamp;
-       return this;
     }
 
     private Double applyBidCommission(Double bid) {

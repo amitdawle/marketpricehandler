@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.santander.marketpricehandler.core.applicationservice.PriceCache;
 import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTick;
 import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTickProcessor;
-import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.Price;
+import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.PriceQuote;
 import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.PriceLookup;
 
 import java.util.Optional;
@@ -23,7 +23,7 @@ class PriceCacheTest {
         processor.process(tick);
 
         PriceLookup lookup = cache;
-        Optional<Price> price = lookup.getPrice("GBP/USD");
+        Optional<PriceQuote> price = lookup.getPrice("GBP/USD");
 
         assertTrue(price.isPresent());
         assertEquals(1, price.get().getPriceId());
@@ -44,7 +44,7 @@ class PriceCacheTest {
 
 
         PriceLookup lookup = cache;
-        Optional<Price> price = lookup.getPrice("GBP/USD");
+        Optional<PriceQuote> price = lookup.getPrice("GBP/USD");
 
         assertTrue(price.isPresent());
         assertEquals(3, price.get().getPriceId());

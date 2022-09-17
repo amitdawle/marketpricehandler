@@ -1,14 +1,14 @@
 package org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot;
 
-public class Price {
+public class PriceQuote {
     private final String ccyPair;
     private final long priceId;
     private final double bid;
     private final double ask;
     private final String timeStamp;
 
-    public Price(final String ccyPair, final long priceId, final double bid,
-                 final double ask, final String timeStamp) {
+    public PriceQuote(final String ccyPair, final long priceId, final double bid,
+                      final double ask, final String timeStamp) {
         this.ccyPair = ccyPair;
         this.priceId = priceId;
         this.bid = bid;

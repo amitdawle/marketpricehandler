@@ -1,6 +1,6 @@
 package org.santander.marketpricehandler.infrastructure.rest;
 
-import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.Price;
+import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.PriceQuote;
 import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.PriceLookup;
 
 import java.util.Objects;
@@ -22,7 +22,7 @@ public class PriceController {
     public ResponseEntity<Price> get(@PathVariable(value = "instrumentId") String instrumentId)
     */
     public String /*ResponseEntity<Price>*/  get(/*@PathVariable(value = "instrumentId")*/ String instrumentId){
-      Optional<Price> price = service.getPrice(instrumentId);
+      Optional<PriceQuote> price = service.getPrice(instrumentId);
       /*
       return price.map(p -> ResponseEntity.ok().body(p)).orElseGet( () -> ResponseEntity.notFound().build());
       */

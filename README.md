@@ -13,7 +13,7 @@ BUILD SUCCESSFUL in 2s
 
 ### Architecture
 The microservice is designed on the principles of [onion/clean architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/).
-The package structure reflects the application layout. A simple hashmap in PriceCache maintains the latest price.
+The package structure reflects the application layout. A simple hashmap in PriceCache maintains the latest priceQuote.
 
 The service does not use spring for di but can be easily retrofitted to do so.
 Spring boot is also not included (but can be added) to serve the rest endpoints.
@@ -21,8 +21,8 @@ Spring boot is also not included (but can be added) to serve the rest endpoints.
 ### Flow
 * MarketPriceFeedHandler handles the incoming messages.
 * It uses a parser to parse and convert the message to a PriceTick and the uses PriceTickProcessor to process the tick.
-* Clients of the rest api are served by the PriceController which uses a PriceLookup to lookup to lookup and send the price.
-* If no price is found it sends an empty string (with REST it would send a 404)
+* Clients of the rest api are served by the PriceController which uses a PriceLookup to lookup to lookup and send the priceQuote.
+* If no priceQuote is found it sends an empty string (with REST it would send a 404)
 
 ## Feed processing
 
@@ -31,7 +31,7 @@ Spring boot is also not included (but can be added) to serve the rest endpoints.
     MarketPriceFeedHandler ->> CSVPriceTickParser: parse
     CSVPriceTickParser -->> MarketPriceFeedHandler : PriceTick
     MarketPriceFeedHandler ->> PriceTickProcessor: process(PriceTick)
-    PriceTickProcessor ->> PriceQuote :  create/update
+    PriceTickProcessor ->> PriceQuote :  create
 ```
 
 ## Instrument Lookup
@@ -40,8 +40,8 @@ Spring boot is also not included (but can be added) to serve the rest endpoints.
   sequenceDiagram
     Client ->> PriceController : rest call
     PriceController ->> PriceLookup :  get
-    PriceLookup -->>  PriceController : Price
-    PriceController -->> Client : Price
+    PriceLookup -->>  PriceController : PriceQuote
+    PriceController -->> Client : PriceQuote
 ```
 
 ### Building and Running the code
@@ -64,7 +64,7 @@ or any other synchronization.
 ### REST API
 Please note the demo will not run any server based on the requirement
 `
-Publish the adjusted price to REST endpoint (just show where the endpoint will be, do not need to implement a webserver).
+Publish the adjusted priceQuote to REST endpoint (just show where the endpoint will be, do not need to implement a webserver).
 `
 
 **It is easy to enable that and I can update the application if required so.**
