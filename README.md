@@ -13,7 +13,7 @@ BUILD SUCCESSFUL in 2s
 
 ### Architecture
 The microservice is designed on the principles of [onion/clean architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/).
-The package structure reflects the application layout. A simple hashmap in PriceCache maintains the latest priceQuote.
+The package structure reflects the application layout. A  (concurrent) hashmap maintains the latest priceQuote.
 
 The service does not use spring for di but can be easily retrofitted to do so.
 Spring boot is also not included (but can be added) to serve the rest endpoints.
@@ -43,17 +43,6 @@ Spring boot is also not included (but can be added) to serve the rest endpoints.
     PriceLookup -->>  PriceController : PriceQuote
     PriceController -->> Client : PriceQuote
 ```
-
-### Building and Running the code
-I have built application using Idea 2022.1 CE edition, gradle 7.4.
-There are tests for the api and the individual components. The org.santander.marketpricehandler.Demo
-class shows a (mock) setup on how the service will run 
-
-### Assumptions / Limitations
-* The code has no synchronization. With multiple thread are reading writing simultaneously, there is a possibility of data race/visibility issues. For that the map in the PriceCache can be changed to
-a concurrent map or (my preferred approach) is to have a shim/indirection layer that handles thread pinning/actor
-or any other synchronization.
-
 * The argument checks are very basic.
   
 * Error handling is limited.
