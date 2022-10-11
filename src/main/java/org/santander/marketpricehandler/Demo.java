@@ -1,9 +1,10 @@
 package org.santander.marketpricehandler;
 
-import org.santander.marketpricehandler.core.applicationservice.PriceCache;
+import org.santander.marketpricehandler.core.applicationservice.PriceService;
 import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTickProcessor;
 import org.santander.marketpricehandler.infrastructure.marketdatafeed.MarketPriceFeedHandler;
 import org.santander.marketpricehandler.infrastructure.marketdatafeed.csv.CSVPriceTickParser;
+import org.santander.marketpricehandler.infrastructure.repository.InMemoryPriceRepository;
 import org.santander.marketpricehandler.infrastructure.rest.PriceController;
 
 public class Demo {
@@ -25,7 +26,7 @@ public class Demo {
         /*
          * All this bootstrapping would be done with spring
          */
-        PriceCache priceService  = new PriceCache();
+        PriceService priceService  = new PriceService(new InMemoryPriceRepository());
         PriceTickProcessor processor = priceService;
         MarketPriceFeedHandler handler = new MarketPriceFeedHandler(new CSVPriceTickParser(), processor);
         PriceController controller = new PriceController(priceService);
