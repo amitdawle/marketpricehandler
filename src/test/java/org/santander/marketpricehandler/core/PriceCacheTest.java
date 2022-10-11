@@ -1,11 +1,12 @@
 package org.santander.marketpricehandler.core;
 
 import org.junit.jupiter.api.Test;
-import org.santander.marketpricehandler.core.applicationservice.PriceCache;
+import org.santander.marketpricehandler.core.applicationservice.PriceService;
 import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTick;
 import org.santander.marketpricehandler.core.applicationservice.api.feedprocessor.PriceTickProcessor;
-import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.PriceQuote;
 import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.PriceLookup;
+import org.santander.marketpricehandler.core.applicationservice.api.pricesnapshot.PriceQuote;
+import org.santander.marketpricehandler.infrastructure.repository.InMemoryPriceRepository;
 
 import java.util.Optional;
 
@@ -14,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PriceCacheTest {
 
-    PriceCache cache = new PriceCache();
+    PriceService cache = new PriceService(new InMemoryPriceRepository());
 
     @Test
     public void processesInitialTick() {
